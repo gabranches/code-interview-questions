@@ -81,6 +81,53 @@ class Stack:
         return "Stack is empty."
 
 
+class BinaryTreeNode:
+
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
+    def add(self, value):
+        if self.value == None:
+            self.value = value
+        else:
+            if value <= self.value:
+                if self.left is not None:
+                    self.left.add(value)
+                else:
+                    self.left = BinaryTreeNode(value)
+            else:
+                if self.right is not None:
+                    self.right.add(value)
+                else:
+                    self.right = BinaryTreeNode(value)
+
+
+    def print_tree(self):
+        print(self.value)
+        if self.left is not None:
+            self.left.print_tree()
+        if self.right is not None:
+            self.right.print_tree()
+
+
+    def __str__(self):
+        self.print_tree()
+        return ""
+        
+
+
+
+
+
+
+
+
+
+
+
 
 
 

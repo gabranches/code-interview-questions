@@ -19,7 +19,6 @@ class AnimalShelter:
 
 
 	def dequeue_any(self):
-
 		if self.dog_q.is_empty() and self.cat_q.is_empty():
 			return 'There are no more animals.'
 		if self.dog_q.is_empty():

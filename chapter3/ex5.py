@@ -22,13 +22,10 @@ def find_max(stack):
 
 
 def sort_recursive(old, new):
-
 	if old.is_empty():
 		return new
-
 	max = find_max(old)
 	new.push(max[0])
-
 	return sort_recursive(max[1], new)
 
 

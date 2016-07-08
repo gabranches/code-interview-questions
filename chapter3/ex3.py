@@ -45,7 +45,6 @@ class SetOfStacks:
     def pop_at(self, index):
         if index > self.piles.size()-1:
             raise "Invalid index."
-
         temp_stack = Stack()
         for i in range(index, 0, -1):
             temp_stack.push(SetOfStacks.pop_stack(self))
