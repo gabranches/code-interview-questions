@@ -106,7 +106,13 @@ class BinaryTreeNode:
 
 
     def print_tree(self):
-        print(self.value)
+        print('Node: ' + str(self.value))
+        if (self.left):
+            print('Left: ' + str(self.left.value)) 
+        if (self.right):
+            print('Right: ' + str(self.right.value))
+        print('')
+
         if self.left is not None:
             self.left.print_tree()
         if self.right is not None:
@@ -119,6 +125,32 @@ class BinaryTreeNode:
         
 
 
+class GraphNode:
+
+    def __init__(self, value):
+        self.value = value
+        self.links = []
+        self.visited = False
+
+
+    def link(self, link):
+        self.links.append(link)
+        return link
+
+
+    def print_graph(self):
+        print('Node: ' + str(self.value))
+        self.visited = True
+        print('Links: ' + str(self.links))
+        if len(self.links) > 0:
+            for i in range(0, len(self.links)):
+                if not self.links[i].visited:
+                    self.links[i].print_graph()
+
+
+    def __str__(self):
+        self.print_graph()
+        return ""
 
 
 
